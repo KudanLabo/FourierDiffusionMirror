@@ -1,8 +1,8 @@
 import torch
 from omegaconf import DictConfig
 
-from fdiff.utils.extraction import flatten_config
-from fdiff.utils.fourier import dft, idft
+from src.fdiff.utils.extraction import flatten_config
+from src.fdiff.utils.fourier import dft, idft
 
 max_len = 100
 n_channels = 3

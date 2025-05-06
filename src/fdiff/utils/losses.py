@@ -4,8 +4,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from fdiff.schedulers.sde import SDE
-from fdiff.utils.dataclasses import DiffusableBatch
+from src.fdiff.schedulers.sde import SDE
+from src.fdiff.utils.dataclasses import DiffusableBatch
 
 
 # Courtesy of https://github.com/yang-song/score_sde_pytorch/blob/main/losses.py

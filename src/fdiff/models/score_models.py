@@ -9,14 +9,14 @@ from einops import rearrange
 from pytorch_lightning.utilities.types import OptimizerLRScheduler
 from torchvision.ops import MLP
 
-from fdiff.models.transformer import (
+from src.fdiff.models.transformer import (
     GaussianFourierProjection,
     PositionalEncoding,
     TimeEncoding,
 )
-from fdiff.schedulers.sde import SDE
-from fdiff.utils.dataclasses import DiffusableBatch
-from fdiff.utils.losses import get_sde_loss_fn
+from src.fdiff.schedulers.sde import SDE
+from src.fdiff.utils.dataclasses import DiffusableBatch
+from src.fdiff.utils.losses import get_sde_loss_fn
 
 
 class ScoreModule(pl.LightningModule):
@@ -137,7 +137,8 @@ class ScoreModule(pl.LightningModule):
     ]:
         # Depending on the scheduler, get the right loss function
 
-        if isinstance(self.noise_scheduler, SDE):
+        #if isinstance(self.noise_scheduler, SDE):
+        if True:
             training_loss_fn = get_sde_loss_fn(
                 scheduler=self.noise_scheduler,
                 train=True,
@@ -157,7 +158,8 @@ class ScoreModule(pl.LightningModule):
             )
 
     def set_time_encoder(self) -> TimeEncoding | GaussianFourierProjection:
-        if isinstance(self.noise_scheduler, SDE):
+        #if isinstance(self.noise_scheduler, SDE):
+        if True:
             return GaussianFourierProjection(d_model=self.d_model)
 
         else:

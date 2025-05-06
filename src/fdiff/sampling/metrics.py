@@ -5,9 +5,9 @@ from typing import Any, Optional
 import numpy as np
 import torch
 
-from fdiff.utils.fourier import dft, spectral_density
-from fdiff.utils.tensors import check_flat_array
-from fdiff.utils.wasserstein import WassersteinDistances
+from src.fdiff.utils.fourier import dft, spectral_density
+from src.fdiff.utils.tensors import check_flat_array
+from src.fdiff.utils.wasserstein import WassersteinDistances
 
 
 class Metric(ABC):

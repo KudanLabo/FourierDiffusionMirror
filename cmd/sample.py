@@ -7,12 +7,14 @@ import yaml
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 
-from fdiff.dataloaders.datamodules import Datamodule
-from fdiff.models.score_models import ScoreModule
-from fdiff.sampling.metrics import MetricCollection
-from fdiff.sampling.sampler import DiffusionSampler
-from fdiff.utils.extraction import dict_to_str, get_best_checkpoint, get_model_type
-from fdiff.utils.fourier import idft
+import sys
+sys.path.append(".")
+from src.fdiff.dataloaders.datamodules import Datamodule
+from src.fdiff.models.score_models import ScoreModule
+from src.fdiff.sampling.metrics import MetricCollection
+from src.fdiff.sampling.sampler import DiffusionSampler
+from src.fdiff.utils.extraction import dict_to_str, get_best_checkpoint, get_model_type
+from src.fdiff.utils.fourier import idft
 
 
 class SamplingRunner:

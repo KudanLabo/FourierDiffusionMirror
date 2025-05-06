@@ -5,8 +5,8 @@ from typing import Any
 import pytorch_lightning as pl
 from omegaconf import DictConfig, OmegaConf
 
-from fdiff.dataloaders.datamodules import Datamodule
-from fdiff.models.score_models import LSTMScoreModule, MLPScoreModule, ScoreModule
+from src.fdiff.dataloaders.datamodules import Datamodule
+from src.fdiff.models.score_models import LSTMScoreModule, MLPScoreModule, ScoreModule
 
 
 def get_training_params(datamodule: Datamodule, trainer: pl.Trainer) -> dict[str, Any]:

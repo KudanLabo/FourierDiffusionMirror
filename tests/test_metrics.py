@@ -2,8 +2,8 @@ import numpy as np
 import pytest
 from ot.sliced import sliced_wasserstein_distance
 
-from fdiff.sampling.metrics import MarginalWasserstein, SlicedWasserstein
-from fdiff.utils.tensors import check_flat_array
+from src.fdiff.sampling.metrics import MarginalWasserstein, SlicedWasserstein
+from src.fdiff.utils.tensors import check_flat_array
 
 random_seed = 42
 n_channels = 1

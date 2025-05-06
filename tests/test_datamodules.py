@@ -2,9 +2,9 @@ from pathlib import Path
 
 import torch
 
-from fdiff.dataloaders.datamodules import Datamodule
-from fdiff.utils.dataclasses import DiffusableBatch
-from fdiff.utils.fourier import idft
+from src.fdiff.dataloaders.datamodules import Datamodule
+from src.fdiff.utils.dataclasses import DiffusableBatch
+from src.fdiff.utils.fourier import idft
 
 max_len = 30
 n_channels = 3

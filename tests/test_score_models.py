@@ -4,9 +4,9 @@ import pytest
 import pytorch_lightning as pl
 import torch
 
-from fdiff.models.score_models import LSTMScoreModule, MLPScoreModule, ScoreModule
-from fdiff.schedulers.sde import VPScheduler
-from fdiff.utils.dataclasses import DiffusableBatch
+from src.fdiff.models.score_models import LSTMScoreModule, MLPScoreModule, ScoreModule
+from src.fdiff.schedulers.sde import VPScheduler
+from src.fdiff.utils.dataclasses import DiffusableBatch
 
 from .test_datamodules import DummyDatamodule
 

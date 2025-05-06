@@ -10,9 +10,9 @@ import pytorch_lightning as pl
 import torch
 from torch.utils.data import DataLoader, Dataset
 
-from fdiff.utils.dataclasses import collate_batch
-from fdiff.utils.fourier import dft, localization_metrics, smooth_frequency
-from fdiff.utils.preprocessing import (
+from src.fdiff.utils.dataclasses import collate_batch
+from src.fdiff.utils.fourier import dft, localization_metrics, smooth_frequency
+from src.fdiff.utils.preprocessing import (
     droughts_preprocess,
     mimic_preprocess,
     nasa_preprocess,

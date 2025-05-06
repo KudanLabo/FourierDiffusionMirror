@@ -3,9 +3,9 @@ from typing import Optional
 import torch
 from tqdm import tqdm
 
-from fdiff.models.score_models import ScoreModule
-from fdiff.schedulers.sde import SDE
-from fdiff.utils.dataclasses import DiffusableBatch
+from src.fdiff.models.score_models import ScoreModule
+from src.fdiff.schedulers.sde import SDE
+from src.fdiff.utils.dataclasses import DiffusableBatch
 
 
 class DiffusionSampler:

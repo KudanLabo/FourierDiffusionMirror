@@ -4,10 +4,10 @@ import pytest
 import pytorch_lightning as pl
 import torch
 
-from fdiff.models.score_models import ScoreModule
-from fdiff.sampling.sampler import DiffusionSampler
-from fdiff.schedulers.sde import SDE, VEScheduler, VPScheduler
-from fdiff.utils.dataclasses import DiffusableBatch
+from src.fdiff.models.score_models import ScoreModule
+from src.fdiff.sampling.sampler import DiffusionSampler
+from src.fdiff.schedulers.sde import SDE, VEScheduler, VPScheduler
+from src.fdiff.utils.dataclasses import DiffusableBatch
 
 from .test_datamodules import DummyDatamodule
 

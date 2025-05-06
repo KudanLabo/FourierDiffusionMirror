@@ -1,8 +1,8 @@
 import pytest
 
-from fdiff.models.score_models import ScoreModule
-from fdiff.sampling.sampler import DiffusionSampler
-from fdiff.schedulers.sde import SDE, VEScheduler, VPScheduler
+from src.fdiff.models.score_models import ScoreModule
+from src.fdiff.sampling.sampler import DiffusionSampler
+from src.fdiff.schedulers.sde import SDE, VEScheduler, VPScheduler
 
 n_channels = 3
 max_len = 50

@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 import torch
 
-from fdiff.models.transformer import (
+from src.fdiff.models.transformer import (
     GaussianFourierProjection,
     PositionalEncoding,
     TimeEncoding,

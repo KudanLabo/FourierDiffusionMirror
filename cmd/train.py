@@ -9,11 +9,13 @@ import torch
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 
-from fdiff.dataloaders.datamodules import Datamodule
-from fdiff.models.score_models import ScoreModule
-from fdiff.utils.callbacks import SamplingCallback
-from fdiff.utils.extraction import dict_to_str, get_training_params
-from fdiff.utils.wandb import maybe_initialize_wandb
+import sys
+sys.path.append(".")
+from src.fdiff.dataloaders.datamodules import Datamodule
+from src.fdiff.models.score_models import ScoreModule
+from src.fdiff.utils.callbacks import SamplingCallback
+from src.fdiff.utils.extraction import dict_to_str, get_training_params
+from src.fdiff.utils.wandb import maybe_initialize_wandb
 
 
 class TrainingRunner:
@@ -53,7 +55,8 @@ class TrainingRunner:
 
         # Possibly setup the datamodule in the sampling callback
         for callback in self.trainer.callbacks:  # type: ignore
-            if isinstance(callback, SamplingCallback):
+            #if isinstance(callback, SamplingCallback):
+            if hasattr(callback, 'setup_datamodule'):
                 callback.setup_datamodule(datamodule=self.datamodule)
 
     def train(self) -> None:

@@ -1,10 +1,10 @@
 import pytorch_lightning as pl
 import torch
 
-from fdiff.dataloaders.datamodules import Datamodule
-from fdiff.models.score_models import ScoreModule
-from fdiff.sampling.metrics import Metric, MetricCollection
-from fdiff.sampling.sampler import DiffusionSampler
+from src.fdiff.dataloaders.datamodules import Datamodule
+from src.fdiff.models.score_models import ScoreModule
+from src.fdiff.sampling.metrics import Metric, MetricCollection
+from src.fdiff.sampling.sampler import DiffusionSampler
 
 from .fourier import idft
 
