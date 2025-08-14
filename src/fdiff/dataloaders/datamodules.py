@@ -410,7 +410,7 @@ class NASDAQDatamodule(Datamodule):
         self.X_test = self.X_test[:, :, :-1]
         #NASDAQ
         self.y_train = torch.LongTensor(list(range(len(self.y_train))))
-        self.y_test = torch.LongTensor(list(range(len(self.y_test)))
+        self.y_test = torch.LongTensor(list(range(len(self.y_test))))
 
 
     def download_data(self) -> None:
