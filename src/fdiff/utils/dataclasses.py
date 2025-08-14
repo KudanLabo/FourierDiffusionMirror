@@ -22,7 +22,11 @@ def collate_batch(data: list[dict[str, torch.Tensor]]) -> DiffusableBatch:
     assert "X" in data[0], "The construction of a batch requires a 'X' key."
 
     X = torch.stack([example["X"] for example in data])
-    y = torch.stack([example["y"] for example in data]) if "y" in data[0] else None
+    #y = torch.stack([example["y"] for example in data]) if "y" in data[0] else None
+    #NASDAQ
+    y = torch.stack([example["y"] for example in data]) if np.random.rand() <= 0.9 else None
+    #NASDAQ#FOR TRAINING UNCONDITIONAL DENOISING
+
     timesteps = (
         torch.stack([example["timestep"] for example in data])
         if "timestep" in data[0]
