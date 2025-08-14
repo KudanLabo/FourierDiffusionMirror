@@ -81,9 +81,9 @@ class ScoreModule(pl.LightningModule):
         X = self.pos_encoder(X)
 
         #NASDAQ
-        label = batch.y
-        if label != None:
-          class_embedding = self.label_encoder(label).unsqueeze(1)
+        if batch.y != None:
+          class_embedding = self.label_encoder(batch.y).unsqueeze(1)
+          X = X + class_embedding 
 
         # Add time encoding
         X = self.time_encoder(X, timesteps)
