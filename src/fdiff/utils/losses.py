@@ -89,6 +89,12 @@ def get_sde_loss_fn(
         # Compute the score function
         score = model(noisy_batch)
 
+        #NASDAQ
+        noisy_batch.y=None #remove label
+        score_uncond = model(noisy_batch)
+        score = score_uncond + self.gamma * (score_cond - score_uncond) 
+        #>NASDAQ#GUIDED SCORE 7.15
+
         if not likelihood_weighting:
             # lambda(t) = E[||\grad log p(x(t)|x(0))||^2]
 
