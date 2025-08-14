@@ -86,6 +86,9 @@ class ScoreModule(pl.LightningModule):
             encoder_layer=transformer_layer, num_layers=num_layers
         )
 
+        #NASDAQ
+        label_encoder = SinusoidalClassEmbedding(seq_length = 84, model_dimension = 60)
+
         # Save all hyperparameters for checkpointing
         self.save_hyperparameters()
 
