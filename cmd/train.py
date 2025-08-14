@@ -47,9 +47,6 @@ class TrainingRunner:
         # Set-up dataset
         self.datamodule.prepare_data()
         self.datamodule.setup("fit")
-        #NASDAQ
-        self.datamodule.y_train = torch.LongTensor(list(range(1000)))
-        self.datamodule.y_test = torch.LongTensor(list(range(1000)))
 
         # Finish instantiation of the model if necessary
         if isinstance(self.score_model, partial):
