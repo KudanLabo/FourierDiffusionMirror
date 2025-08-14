@@ -408,6 +408,10 @@ class NASDAQDatamodule(Datamodule):
         # Filter out the last feature (volume) due to awkward scaling
         self.X_train = self.X_train[:, :, :-1]
         self.X_test = self.X_test[:, :, :-1]
+        #NASDAQ
+        self.y_train = torch.LongTensor(list(range(len(self.y_train))))
+        self.y_test = torch.LongTensor(list(range(len(self.y_test)))
+
 
     def download_data(self) -> None:
         import kaggle
