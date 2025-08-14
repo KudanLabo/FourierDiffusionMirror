@@ -18,7 +18,32 @@ from src.fdiff.schedulers.sde import SDE
 from src.fdiff.utils.dataclasses import DiffusableBatch
 from src.fdiff.utils.losses import get_sde_loss_fn
 
+def get_positional_encoding(seq_len, d_model):#NASDAQ
+    """
+    Generate positional encoding for a sequence.
 
+    Args:
+        seq_len: Length of the sequence.
+        d_model: Dimension of the model (embedding size).
+
+    Returns:
+        A numpy array of shape (seq_len, d_model) containing positional encoding.
+    """
+    position = np.arange(seq_len)[:, np.newaxis]
+    div_term = np.exp(np.arange(0, d_model, 2) * -(np.log(10000.0) / d_model))
+    pe = np.zeros((seq_len, d_model))
+    pe[:, 0::2] = np.sin(position * div_term)
+    pe[:, 1::2] = np.cos(position * div_term)
+    return torch.FloatTensor(pe)
+    
+class SinusoidalClassEmbedding(nn.Module):#NASDAQ
+    def __init__(self, seq_length: int = 84, model_dimension: int = 60):
+        super().__init__()
+        self.positional_encoding = get_positional_encoding(seq_length, model_dimension)
+
+    def forward(self, label_batch:torch.LongTensor):
+        return self.positional_encoding[label_batch]
+        
 class ScoreModule(pl.LightningModule):
     def __init__(
         self,
