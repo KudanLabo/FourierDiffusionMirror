@@ -1,9 +1,9 @@
 random_seed: 42
-fourier_transform: false
+fourier_transform: true
 standardize: true
 
 defaults:
   - _self_
   - score_model: default
-  - datamodule: ecg
+  - datamodule: nasdaq
   - trainer: default
