@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 import torch
-
+import numpy as np
 
 @dataclass
 class DiffusableBatch:
